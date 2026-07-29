@@ -32,7 +32,7 @@ export default function Main(){
                     </h1>
 
                     <h2 className="mt-1 text-[22px] font-semibold tracking-wide text-white/90">
-                    Quarlabs
+                    Quarlabs.ai
                     </h2>
 
                 </div>
