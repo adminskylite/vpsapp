@@ -36,7 +36,7 @@ jobs:
             echo "=============================="
 
             git fetch origin
-            git reset --hard origin/main
+            git reset --hard origin/mainv2
 
             echo "=============================="
             echo "Creating .env.local"
