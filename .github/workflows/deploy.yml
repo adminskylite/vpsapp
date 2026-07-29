@@ -3,7 +3,7 @@ name: Deploy Next.js Frontend
 on:
   push:
     branches:
-      - main
+      - mainv2
 
 jobs:
   deploy:
