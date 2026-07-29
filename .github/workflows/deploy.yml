@@ -47,6 +47,15 @@ jobs:
             EOF
 
             echo "=============================="
+            echo "Loading Node via NVM"
+            echo "=============================="
+
+            export PATH="/home/administrator/.nvm/versions/node/v24.14.0/bin:$PATH"
+
+            node -v
+            npm -v
+
+            echo "=============================="
             echo "Installing Dependencies"
             echo "=============================="
 
