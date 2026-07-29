@@ -1,0 +1,76 @@
+name: Deploy Next.js Frontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: vpsCICD
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+
+          script: |
+            set -e
+
+            echo "=============================="
+            echo "Moving to project directory"
+            echo "=============================="
+
+            cd /home/administrator/business/vpsapp
+
+            echo "=============================="
+            echo "Pulling latest code"
+            echo "=============================="
+
+            git fetch origin
+            git reset --hard origin/main
+
+            echo "=============================="
+            echo "Creating .env.local"
+            echo "=============================="
+
+            cat > .env.local << 'EOF'
+            ${{ secrets.ENV_LOCAL }}
+            EOF
+
+            echo "=============================="
+            echo "Installing Dependencies"
+            echo "=============================="
+
+            npm install
+
+            echo "=============================="
+            echo "Building Next.js"
+            echo "=============================="
+
+            npm run build
+
+            echo "=============================="
+            echo "Restarting PM2"
+            echo "=============================="
+
+            if pm2 describe vps-business > /dev/null
+            then
+              pm2 restart vps-business
+            else
+              pm2 start npm --name vps-business -- start
+            fi
+
+            pm2 save
+
+            echo "=============================="
+            echo "Deployment Successful"
+            echo "=============================="

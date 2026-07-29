@@ -41,7 +41,7 @@ export default function Main(){
             <div className="h-[61vh] bg-white">
                 <ExploreCategories/>
             </div>
-            <div className="h-[14vh] bg-white"><BottomNav/></div>
+            <div className="h-[10vh] bg-white"><BottomNav/></div>
         </div>
     )
 }
