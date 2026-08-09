@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BottomNav from "./bottomNav";
+import Link from "next/link";
 export default function CourseModules({
   courseName,
   modules = [],
@@ -132,9 +133,9 @@ export default function CourseModules({
                   <div className="bg-slate-50 rounded-xl p-2 space-y-1">
 
                     {/* Read Content */}
-                    <button
+                    <Link
                       type="button"
-                      onClick={() => onReadContent?.(module)}
+                      href="/content"
                       className="
                         w-full
                         flex items-center gap-3
@@ -166,7 +167,7 @@ export default function CourseModules({
                       <span className="text-violet-500 text-lg group-hover:translate-x-1 transition-transform">
                         →
                       </span>
-                    </button>
+                    </Link>
 
                     {/* Download Notes */}
                     {module.notesUrl && (
