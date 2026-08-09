@@ -1,5 +1,6 @@
+'use client'
 import { PieChart, CheckCircle2, PenTool, Plane, CircleCheckBig } from "lucide-react";
-
+import Link from "next/link";
 const categories = [
   {
     title: "VPS Deployment",
@@ -88,7 +89,8 @@ export default function AllCourses(){
             <div className="grid grid-cols-2 gap-4">
                 {categories.map(({ title, count, icon: Icon, bg, iconColor, status }) => (
                     
-                    <button
+                    <Link
+                        href={"/modules"}
                         key={title}
                         className="relative group bg-white rounded-2xl p-4 flex flex-col items-start gap-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.1)] transition-shadow text-left cursor-pointer"
                     >
@@ -108,7 +110,7 @@ export default function AllCourses(){
                         </p>
                         <p className="text-slate-400 text-sm mt-0.5">{count}</p>
                         </div>
-                    </button>
+                    </Link>
                 ))}
             </div>
         </div>
