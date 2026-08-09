@@ -50,6 +50,7 @@
 import BottomNav from "../components/bottomNav";
 import ExploreCategories from "../components/catalog";
 import Link from "next/link";
+import LearningFeatures from "../components/features";
 export default function Main() {
   return (
     <main className="min-h-screen bg-white">
@@ -483,6 +484,9 @@ export default function Main() {
           </div>
 
         </section>
+        {/* ================= FEATURES ================= */}
+
+        <LearningFeatures/>
 
 
         {/* ================= CATEGORIES ================= */}
