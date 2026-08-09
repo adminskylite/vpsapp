@@ -1,6 +1,7 @@
 "use client";
 
 import { PieChart, CheckCircle2, PenTool, Plane, CircleCheckBig } from "lucide-react";
+import Link from "next/link";
 
 const categories = [
   {
@@ -50,10 +51,10 @@ export default function ExploreCategories() {
         <div className="w-full max-w-sm mx-auto p-4">
         <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-slate-900">Explore Categories</h2>
-            <button className="cursor-pointer text-sm font-semibold text-violet-600 flex items-center gap-0.5 hover:text-violet-700 transition-colors">
+            <Link href={"/all-courses"} className="cursor-pointer text-sm font-semibold text-violet-600 flex items-center gap-0.5 hover:text-violet-700 transition-colors">
             View All
             <span className="text-base leading-none">›</span>
-            </button>
+            </Link>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
