@@ -24,7 +24,7 @@ export default function ReadContent({
   };
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full  min-h-screen bg-white">
       <div className="w-full max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10">
 
         {/* ================= HEADER ================= */}
