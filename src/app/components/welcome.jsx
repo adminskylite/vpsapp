@@ -174,21 +174,21 @@ export default function WelcomeCard() {
 
             <div className="hidden lg:flex items-center gap-9 text-sm font-medium text-slate-500">
 
-              <a className="text-violet-600">
+              <Link href={"/all-courses"} className="text-violet-600">
                 Home
-              </a>
+              </Link>
 
-              <a className="transition hover:text-violet-600">
+              <Link href={"/all-courses"} className="transition hover:text-violet-600">
                 Courses
-              </a>
+              </Link>
 
-              <a className="transition hover:text-violet-600">
+              <Link href={"/all-courses"} className="transition hover:text-violet-600">
                 Categories
-              </a>
+              </Link>
 
-              <a className="transition hover:text-violet-600">
+              <Link href={"/all-courses"} className="transition hover:text-violet-600">
                 My Learning
-              </a>
+              </Link>
 
             </div>
 
