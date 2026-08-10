@@ -9,6 +9,7 @@ import MobileAppCTA from "../components/mobileApp";
 import BlogPreview from "../components/blogs";
 import Footer from "../components/footer";
 import ExploreCategories from "../components/catalog";
+import Image from "next/image";
 
 export default function WelcomeCard() {
     const router = useRouter()
@@ -153,13 +154,19 @@ export default function WelcomeCard() {
 
             <div className="flex items-center gap-3">
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-600 text-lg font-extrabold text-white shadow-lg shadow-violet-200">
-                Q
-              </div>
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-lg shadow-violet-200">
+                <Image
+                    src="/logo.png"
+                    alt="QuerLabs"
+                    width={44}
+                    height={44}
+                    className="h-full w-full object-cover"
+                />
+                </div>
 
               <div>
                 <h1 className="text-xl font-bold tracking-tight text-slate-900">
-                  Quarlabs<span className="text-violet-600">.ai</span>
+                  Quarlabs<span className="text-violet-600"></span>
                 </h1>
 
                 <p className="text-[9px] font-semibold uppercase tracking-[1.5px] text-slate-400">
@@ -182,12 +189,16 @@ export default function WelcomeCard() {
                 Courses
               </Link>
 
-              <Link href={"/all-courses"} className="transition hover:text-violet-600">
-                Categories
+              <Link href={"/blogs"} className="transition hover:text-violet-600">
+                Blogs
               </Link>
 
               <Link href={"/all-courses"} className="transition hover:text-violet-600">
-                My Learning
+                Labs
+              </Link>
+
+              <Link href={"/help"} className="transition hover:text-violet-600">
+                Help
               </Link>
 
             </div>
