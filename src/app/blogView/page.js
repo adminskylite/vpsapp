@@ -8,7 +8,6 @@ import {
   CheckCircle2,
   Clock3,
   Copy,
-  Linkedin,
   Share2,
   Twitter,
 } from "lucide-react";
@@ -491,7 +490,7 @@ sudo certbot --nginx -d example.com`}</code>
                   type="button"
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-400 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-600"
                 >
-                  <Linkedin className="h-4 w-4" />
+                  {/* <Linkedin className="h-4 w-4" /> */}
                 </button>
 
                 <button
